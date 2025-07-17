@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace dotnetcoreSessions.Data
 {
+
+
     public class ApplicationDbContext : DbContext
     {
         
@@ -12,6 +14,8 @@ namespace dotnetcoreSessions.Data
         }
 
         public DbSet<Students> Students { get; set; }
+
+
 
     }
 }
