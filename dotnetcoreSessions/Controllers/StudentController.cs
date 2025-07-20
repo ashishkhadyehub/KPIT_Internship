@@ -32,5 +32,37 @@ namespace dotnetcoreSessions.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var student = _context.Students.Find(id);
+            return View(student);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Students student)
+        {
+            _context.Students.Update(student);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var student = _context.Students.Find(id);
+            return View(student);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Students student)
+        {
+            _context.Students.Remove(student);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
     }
 }
